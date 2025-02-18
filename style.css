@@ -171,6 +171,77 @@ img {
   transition: all 0.3s ease;
 }
 
+/* HEADER - MOBILE */
+.header .toggle__menu span{
+  background-color: var(--clr-primary);
+  width: 3rem;
+  height: 0.3rem;
+  display: block;
+  border: 2px solid var(--clr-primary);
+  border-radius: 1rem;
+  transition: all 0.5 ease;
+}
+.header .toggle__menu{
+  display: none;
+}
+@media screen and (max-width: 520px){
+  .header .toggle__menu{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .header{
+    position: fixed;
+    background-color: var(--clr-light);
+    width: 100%;
+    z-index: 99;
+  }
+  .header__nav{
+    position: fixed;
+    background-color: var(--clr-light);
+    flex-direction: column;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    right: -100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22rem;
+    transform: translateY(-14rem);
+    transition: all 0.5s ease;
+  }
+  .header img{
+    width: 10rem;
+  }
+  .header__nav li a{
+    font-size: 2rem;
+  }
+  .header__nav li a::after{
+background-color: unset;
+  }
+  .header__nav li a:hover,
+ .header__nav li a.active{
+  color: var(--clr-secondary);
+ }
+.header__nav.open{
+  right: 0;
+  transition: all 0.5s ease;
+}
+.toggle__menu.open span:first-child{
+  transform: translate(0, 6px) rotate(225deg);
+  transition: all 0.5s ease;
+}
+.toggle__menu.open span:nth-child(2){
+  opacity: 0;
+  transform: all 0.5s ease;
+}
+.toggle__menu.open span:last-child{
+  transform: translate(0, -11.5px) rotate(-225deg);
+  transition: all 0.5s ease;
+}
+}
+
 /* BANNER */
 .banner {
   padding-top: 7rem;
@@ -195,10 +266,21 @@ img {
   width: 100%;
 }
 
+/* BANNER - MOBILE */
+@media screen and (max-width: 520px) {
+  .banner{
+    padding-top: 10rem;
+    height: 50rem;
+  }
+  .banner h1{
+    font-size: var(--h3);
+  }
+}
+
 /* HOLIDAY */
 .holiday {
   margin-top: 10rem;
-  padding-top: 5px;
+  padding-top: 5rem;
 }
 .holiday__wrapper {
   display: grid;
@@ -240,6 +322,32 @@ img {
   padding-right: 5rem;
 }
 
+/* HOLIDAY - MOBILE */
+@media screen and (max-width: 520px) {
+  .holiday{
+    margin-top: 0;
+  }
+  .holiday__left h2{
+    font-size: var(--h3);
+    line-height: 4rem;
+  }
+  .holiday__cards{
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .holiday__wrapper{
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+  .holiday__left{
+    border-right: unset;
+    padding-right: unset;
+  }
+  .holiday__right{
+     margin-top: 0;
+  }
+ 
+}
 /* DESIGN */
 .designCarol {
   padding: 5rem 0;
@@ -306,6 +414,40 @@ img {
   text-decoration: underline;
 }
 
+/* DESIGNCAROL - MOBILE */
+@media screen and (max-width:520px){
+.carolsBanner {  
+ padding: 5rem 0 margin;
+  }
+  .carolsBanner__wrapper img{
+  width: 35rem;
+  margin-top: 5rem;
+  }
+  .carolsBanner__wrapper{
+    text-align: center;
+    margin-top: 5rem 0;
+  }
+  
+  .carolsBanner__cards{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+  }
+  .carolsBanner__wrapper h1{
+    font-size: var(--h3);
+    margin-top: 2rem;
+  }
+  .carolsBanner__wrapper p{
+    text-align: center;
+    max-width: 60rem;
+    color: var(--clr-secondary);
+    font-family: var(--font-secondary);
+    font-style: italic;
+    margin: 0 auto;
+  }
+}
+  
 /* TRADITION */
 .tradition {
   padding: 5rem 0;
@@ -416,8 +558,31 @@ img {
   bottom: 5rem;
   left: 10rem;
 }
-
-.designCarol__item {
+/* TRADITION - MOBILE */
+  @media screen and (max-width:520px) {
+    .tradition {  
+  margin-top: 0;
+  }
+  .tradition__wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  }
+  .traditionBanner__wrapper img{
+    width: 35rem;
+    margin-top: 5rem ;
+  
+  }
+  .tradition__item{
+    display: grid;
+  gap: 3rem;
+  align-items: center;
+  }
+  .tradition__item img{
+    width: 100rem;
+  }
+  }
+  .designCarol__item {
   border-right: 1px solid rgb(43, 43, 43, 0.1);
   padding: 2rem 3rem;
 }
@@ -439,7 +604,7 @@ img {
   line-height: 1.5rem;
 }
 .designCarol__contents {
-  border-top: 4px solid var(--clr-secondary);
+
   background-color: var(--clr-light);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -466,6 +631,34 @@ img {
 .designCarol__item:last-child {
   border-right: unset;
 }
+/* design carol mobile */
+ @media screen and (max-width:520px)
+ {
+  .designCarol{
+    margin-top: 0;
+  }
+  .designCarol__left h2{
+    font-size: var(--h2);
+  }
+.designCarol__wrappers{
+    height: unset;
+  }
+  .designCarol__item{
+    background-color: var(--clr-light);
+  }
+  .designCarol__contents{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: unset;
+    gap: 3rem;
+ }
+ .designCarol__img{
+  display: none;
+ }
+ .designCarol__card{
+  background-color: var(--clr-light);
+ }
+ }
 
 /* DECORATIONS */
 .decor {
@@ -494,7 +687,6 @@ img {
   max-width: 50rem;
   margin-bottom: 3rem;
 }
-
 .decor__left span {
   color: var(--clr-primary);
   font-style: italic;
@@ -520,7 +712,46 @@ img {
   border-right: 1px solid rgb(43, 43, 43, 0.1);
   padding-right: 5rem;
 }
-/* FOOTER */
+/* DECORATIONS - MOBILE */
+ @media screen and (max-width:520px){
+.decor{
+  padding-top: 0;
+  margin-top: 0;
+  }
+  .decor__wrapper{
+     display: grid;
+  grid-template-columns: 1fr;
+  gap: 0rem;
+  }
+  .decor__right h4{
+    font-size: var(--h4);
+    margin-bottom: 1rem;
+  }
+}
+.decor__left {
+  padding: 0;
+}
+.decor__cards{
+  padding: 3rem;
+}
+
+  .decor__wrapper{
+     display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  }
+ .decor__left small {
+  font-style: 1.4rem;
+  color: var(--clr-secondary);
+  font-weight: 500;
+  line-height: 3rem;
+  padding: 1rem0;
+}
+.decor__left {
+  border-right:unset;
+  padding-right: unset;
+}
+ /* FOOTER */
 .footer {
   background-color: var(--clr-secondary);
   color: var(--clr-light);
@@ -567,7 +798,14 @@ img {
 .footer__bottom--b li:nth-child(2) {
   margin-top: 3rem;
 }
-/* TRADITION PAGE */
+/* FOOTER - MOBILE */
+@media screen and (max-width:520px) {
+  .footer__bottom{
+    display: grid;
+    grid-template-columns: 2fr;
+  } 
+}
+ /* TRADITION PAGE */
 .traditionBanner {
   padding: 5rem 0;
 }
@@ -579,7 +817,7 @@ img {
   flex-direction: column;
   align-items: center;
 }
-.tradition__cards {
+.traditioncards__wrapper {
   margin-top: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -612,156 +850,85 @@ img {
   font-weight: 200;
   color: var(--clr-primary);
 }
+.card__details span{
+  color: var(--clr-secondary);
+}
 .card__details p {
   color: var(--clr-primary);
   margin-top: 1rem;
-}
-
-/* FOODS PAGE */
-.foodBanner {
-  padding: 5rem 0;
-}
-.foodBanner__wrapper img {
+} 
+/* TRADITION - MOBILE */
+ @media screen and (max-width:520px) {
+.traditionBanner {  
+ padding: 5rem 0 margin;
+  }
+  .traditionBanner__wrapper img{
   width: 45rem;
-}
-.foodBanner__wrapper {
-  display: flex;
-  flex-direction: column;
+  }
+  .traditionBanner__wrapper{
+    display: flex;
+    flex-direction: column;
   align-items: center;
+  }
+  .traditionBanner__cards{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+  }
+  .traditionBanner__wrapper h1{
+    font-size: var(--h3);
+    margin-top: 2rem;
+  }
 }
-.food__cards {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5rem;
+/* REPEATABLE PATTERN */
+.item {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2rem;
 }
-.food__cards img {
-  width: 80rem;
-  border-bottom: 4px solid var(--clr-secondary);
+.item img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
 }
-.foodBanner h1 {
-  font-size: var(--h1);
-}
-.foodBanner__wrapper p {
-  color: var(--clr-secondary);
-  font-style: italic;
+.item__details h5 {
+  font-size: var(--h5);
   font-family: var(--font-secondary);
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
 }
-.foodBanner span {
-  color: var(--clr-secondary);
-}
-.card__details h3 {
-  font-size: var(--h3);
-  font-family: var(--font-secondary);
-  line-height: 3rem;
-  padding: 1rem 0;
-}
-.card__details small {
+.item__details small {
   font-size: 1.3rem;
   font-style: italic;
   font-weight: 200;
   color: var(--clr-primary);
 }
-.card__details p {
-  color: var(--clr-primary);
-  margin-top: 1rem;
+.btn {
+  background-color: transparent;
+  color: transparent;
 }
-/* CAROLS PAGE */
-.carolsBanner {
-  padding: 5rem 0;
+.btn.bg--red {
+  padding: 1rem 3rem;
+  background-color: var(--clr-secondary);
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--clr-light);
+  transition: all ease-in-out;
+  transition-delay: 0.5s;
 }
-.carolsBanner__wrapper img {
-  width: 45rem;
+.btn.bg--red:hover span {
+  position: relative;
+  left: 0.5rem;
+  transition: all ease-in-out;
+  transition-delay: 0.5s;
 }
-.carolsBanner__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.carols__cards{
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5rem;
-}
-.carols__cards img {
-  width: 80rem;
-  border-bottom: 4px solid var(--clr-secondary);
-}
-.carolsBanner h1 {
-  font-size: var(--h1);
-}
-.carolsBanner__wrapper p {
-  color: var(--clr-secondary);
-  font-style: italic;
-  font-family: var(--font-secondary);
-}
-.carolsBanner span {
-  color: var(--clr-secondary);
-}
-.card__details h3 {
-  font-size: var(--h3);
-  font-family: var(--font-secondary);
-  line-height: 3rem;
-  padding: 1rem 0;
-}
-.card__details small {
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 200;
-  color: var(--clr-primary);
-}
-.card__details p {
-  color: var(--clr-primary);
-  margin-top: 1rem;
-}
-
-/* DECORATIONS PAGE */
-.decorBanner {
-  padding: 5rem 0;
-}
-.decorBanner__wrapper img {
-  width: 45rem;
-}
-.decorBanner__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.decor__cards{
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5rem;
-}
-.decor__cards img {
-  width: 80rem;
-  border-bottom: 4px solid var(--clr-secondary);
-}
-.decorBanner h1 {
-  font-size: var(--h1);
-}
-.decorBanner__wrapper p {
-  color: var(--clr-secondary);
-  font-style: italic;
-  font-family: var(--font-secondary);
-}
-.decorBanner span {
-  color: var(--clr-secondary);
-}
-.card__details h3 {
-  font-size: var(--h3);
-  font-family: var(--font-secondary);
-  line-height: 3rem;
-  padding: 1rem 0;
-}
-.card__details small {
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 200;
-  color: var(--clr-primary);
-}
-.card__details p {
-  color: var(--clr-primary);
-  margin-top: 1rem;
+.btn.bg--green {
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  transition: all ease-in-out;
+  transition-delay: 0.5s;
 }
